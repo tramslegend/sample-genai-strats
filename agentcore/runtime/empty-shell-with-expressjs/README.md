@@ -79,6 +79,8 @@ Sends `{"hello": "world"}` to the runtime and prints the response to `tmp/invoke
 #### AWS CLI call:
 
 ```bash
+PAYLOAD=$(echo '{"hello": "world"}' | base64)
+
 aws bedrock-agentcore invoke-agent-runtime \
     --agent-runtime-arn "arn:aws:bedrock-agentcore:{region}}:{account}:runtime/{id}" \
     --payload "eyJoZWxsbyI6ICJ3b3JsZCJ9" \
